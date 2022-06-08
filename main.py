@@ -12,6 +12,7 @@ def simpsonMethod(f, startPoint, endPoint, parts):
     :param parts: amount of segments
     :return: approximate area of the integral
     """
+    print("Divided into " + str(parts)+" parts\n")
     if parts % 2 == 1:  # if there is not even numbers of parts
         print("Amount of parts must be even")
         return None
@@ -189,17 +190,14 @@ x = sp.symbols('x')
 # define function
 f = (sp.sin(x ** 2 + 5 * x + 6)) / (2 * sp.exp(-x))
 
-
 # define range
 startPoint = 0
 endPoint = 1
-print(simpsonMethod(f, startPoint, endPoint, 4))
+print(simpsonMethod(f, startPoint, endPoint, 22))
 #print(errorCalculation(f, 4, endPoint, startPoint))
 print()
 
 #result = trapezoidMethod(f, startPoint, endPoint, 4)
 #print("\n" + str(result)+ "\n"+ "\n"+ "\n")
-
-
 
 
