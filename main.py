@@ -182,29 +182,23 @@ def Secant(f, previewX, currentX, maxIteration):
     print("Failed to find the root, Secant Method isn't suitable")
 
 
-"""def TrapezoidError(f, leftDomain, rightDomain, n):
-    g = f.diff(x)
-    h = g.diff(x)
-    f = lambdify(x, f)
-    g = lambdify(x, g)
-    h = lambdify(x, h)
-    print(abs((rightDomain - leftDomain) * 3 * MaxFunctionValue(h, leftDomain, rightDomain) / (12 * n * 2)))
-    return abs((rightDomain - leftDomain) * 3 * MaxFunctionValue(h, leftDomain, rightDomain) / (12 * n * 2)) <= 0.000002"""
+
 
 x = sp.symbols('x')
 
 # define function
-f = sp.sin(x)
+f = (sp.sin(x ** 2 + 5 * x + 6)) / (2 * sp.exp(-x))
+
 
 # define range
 startPoint = 0
-endPoint = math.pi
+endPoint = 1
 print(simpsonMethod(f, startPoint, endPoint, 4))
-print(errorCalculation(f, 4, endPoint, startPoint))
+#print(errorCalculation(f, 4, endPoint, startPoint))
 print()
 
-result = trapezoidMethod(f, startPoint, endPoint, 4)
-print("\n" + str(result)+ "\n"+ "\n"+ "\n")
+#result = trapezoidMethod(f, startPoint, endPoint, 4)
+#print("\n" + str(result)+ "\n"+ "\n"+ "\n")
 
 
 
